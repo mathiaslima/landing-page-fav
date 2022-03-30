@@ -14,7 +14,4 @@ export const Container = styled.div`
         max-width: 600px;
     }
 
-   
-
-
 `

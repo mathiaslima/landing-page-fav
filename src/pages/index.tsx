@@ -27,6 +27,9 @@ const Home = ({ allProducts }: allProductsInterface) => {
 
   const [favorites, setFavorites] = useState<ProductInterface[]>(allProducts);
 
+  
+  // Function to favorite product
+
   const handleFavorite = useCallback((id: number) => {
     let makeArrayOfFavorites = [...favorites];
 
@@ -38,11 +41,11 @@ const Home = ({ allProducts }: allProductsInterface) => {
     setFavorites(makeArrayOfFavorites);
     
   }, [favorites])
-  
+
   return (
     <Container>
       <Head>
-        <title>Lista de Produtos</title>
+        <title>Produtos</title>
       </Head>
 
       <main>

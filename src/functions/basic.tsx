@@ -1,3 +1,4 @@
+// function to format number of money 
 export const formatNumberToMoney = (numberToFormat: number) => {
     const formatter = new Intl.NumberFormat('pt-BR', {
         style: 'currency',
