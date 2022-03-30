@@ -1,26 +1,74 @@
-import type { NextPage } from 'next'
+import React, { useCallback, useEffect, useState } from 'react';
 import Head from 'next/head'
-import imageCam from "../assets/images/camiseta-azul.jpg"
+import { getDataHome } from '../functions/home'
 import { Container } from '../styles/pages/home'
+import ProductCard from '../components/ProductCard';
+import {
+  Grid
+} from '@mui/material';
 
-const Home: NextPage = () => {
+interface allProductsInterface {
+  allProducts: ProductInterface[];
+}
+
+export interface ProductInterface {
+  id: number;
+  name: string;
+  imageURL: string;
+  listPrice: string[];
+  salePrice: string;
+  favorite?: boolean;
+  handleFavorite(): any;
+  key?: number;
+}
+
+
+const Home = ({ allProducts }: allProductsInterface) => {
+
+  const [favorites, setFavorites] = useState<ProductInterface[]>(allProducts);
+
+  const handleFavorite = useCallback((id: number) => {
+    let makeArrayOfFavorites = [...favorites];
+
+    makeArrayOfFavorites.map(product => {
+      if (product.id === id)
+        product.favorite = !product.favorite
+    })
+
+    setFavorites(makeArrayOfFavorites);
+    
+  }, [favorites])
+  
   return (
     <Container>
       <Head>
-        <title>Test</title>
+        <title>Lista de Produtos</title>
       </Head>
 
       <main>
-
-        <h1>
-          <img src="https://ibb.co/2MSRSMz" alt="camiseta-azul" />
-        </h1>
-
+        <section>
+          <Grid container spacing={{ xs: 2, md: 3 }} columns={{ xs: 4, sm: 8, md: 12 }}>
+            {allProducts.map((product, index) => (
+              <ProductCard
+                {...product}
+                key={index}
+                handleFavorite={() => handleFavorite(product.id)}
+              />
+            ))}
+          </Grid>
+        </section>
       </main>
-
 
     </Container>
   )
+}
+
+export async function getStaticProps() {
+  let allProducts = await getDataHome();
+
+  return {
+    props: { allProducts },
+  }
 }
 
 export default Home

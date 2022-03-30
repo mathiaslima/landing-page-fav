@@ -5,6 +5,7 @@
       "name": "camiseta azul estonada califórnia",
       "imageURL": "https://i.ibb.co/6NHZdyh/camiseta-azul.jpg",
       "listPrice": ["50.00", "70.00"],
+      "favorite": false,
       "salePrice": "79.90"
     },
     {
@@ -12,6 +13,7 @@
       "name": "cinto quadriculado preto e cinza",
       "imageURL": "https://i.ibb.co/bvFYFv4/image.png",
       "listPrice": ["59.90", "70.00"],
+      "favorite": false,
       "salePrice": "59.90"
     },
     {
@@ -19,6 +21,7 @@
       "name": "bermuda de sarja caqui",
       "imageURL": "https://i.ibb.co/Fm2gTXC/image.png",
       "listPrice": ["50.00", "70.00"],
+      "favorite": false,
       "salePrice": "139.90"
     },
     {
@@ -26,6 +29,7 @@
       "name": "bucket hat azul claro",
       "imageURL": "https://i.ibb.co/mBq7jFR/image.png",
       "listPrice": ["50.0", "70.0"],
+      "favorite": false,
       "salePrice": "79.90"
     },
     {
@@ -33,6 +37,7 @@
       "name": "camiseta preta estonada triângulo",
       "imageURL": "https://i.ibb.co/cxcvyZq/image.png",
       "listPrice": ["50.0", "70.0"],
+      "favorite": false,
       "salePrice": "79.90"
     },
     {
@@ -40,6 +45,7 @@
       "name": "camiseta bege estonada com bordado",
       "imageURL": "https://i.ibb.co/d0TzjD1/image.png",
       "listPrice": ["50.0", "70.0"],
+      "favorite": false,
       "salePrice": "79.90"
     }
   ]
